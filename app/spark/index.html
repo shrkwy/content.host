@@ -11,11 +11,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 
   <style>
     ::-webkit-scrollbar {
       display: none;
     }
+
     * {
       scrollbar-width: none;
     }
@@ -28,16 +30,24 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      min-height: 100dvh;
       margin: 0;
       background-color: #000;
     }
 
-    #video-container {
+    .spark-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
+      aspect-ratio: 16 / 9;
+      max-width: 1440px;
+      position: relative;
     }
+
+
     @media (min-width: 768px) {
-      #video-container {
+      .spark-container {
         width: 100%;
         max-width: 1440px;
       }
@@ -47,33 +57,43 @@
       width: 100%;
       height: auto;
     }
-    
+
     .video-js {
       font-family: "Lexend Deca", Roboto, Arial, Helvetica, sans-serif !important;
       -webkit-font-smoothing: antialiased;
     }
 
     .vjs5-hola-skin .vjs-control-bar {
-      font-size: 14px;
+      font-size: 0.6rem;
+    }
+
+    .vjs-ios-skin .vjs-control-bar {
+      font-size: 0.5rem;
+    }
+
+    .video-js.vjs-16-9,
+    .video-js.vjs-4-3,
+    .video-js.vjs-fluid {
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 
 <body>
+  <div id="spark" class="spark-container"></div>
   <script>
     (function () {
       const videosrc = new URLSearchParams(window.location.search).get("link");
       if (videosrc) {
-        document.write(`
-        <div id="video-container">
+        document.getElementById("spark").innerHTML = `
           <video
-            preload="metadata" 
-            id="player" 
-            class="video-js video vjs-default-skin" 
-            controls>
-              <source src="${videosrc}" type="application/x-mpegURL">
-          </video>
-        </div>`);
+              preload="metadata" 
+              id="player" 
+              class="video-js video vjs-default-skin" 
+              controls>
+                <source src="${videosrc}" type="application/x-mpegURL">
+          </video>`;
         window.hola_player()
       }
     })();
