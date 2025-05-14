@@ -19,7 +19,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.shaka-fast-forward-container, .shaka-rewind-container {
+.shaka-fast-foward-container, .shaka-rewind-container {
   background-color: #00000070 !important;
 }
 

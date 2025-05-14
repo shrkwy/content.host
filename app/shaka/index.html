@@ -29,6 +29,14 @@
     <link type="image/png" rel="apple-touch-icon" href="/img/video-player/favicon.png">
 
     <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        * {
+            scrollbar-width: none;
+        }
+        
         body {
             font-family: 'DM Sans', serif;
             display: flex;
@@ -40,8 +48,8 @@
         }
 
         #video-container {
-            width: 85%;
-            max-width: 1100px;
+            width: 100%;
+            max-width: 1440px;
         }
 
         video {
@@ -66,7 +74,7 @@
         const svgPath = '/app/shaka/spinner.svg';
         //Loading the shaka player
         document.addEventListener('shaka-ui-loaded', init);
-        
+
         ////////--------------------------------------------------------////////
         ////////--------------------------------------------------------////////
         ////////--------------------------------------------------------////////
