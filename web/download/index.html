@@ -83,7 +83,7 @@
           </li>
           <li>
             Files from the repo. are available at :
-            <a href="https://cdn.jsdelivr.net/gh/shrkwy/content.host@main/"
+            <a href="https://cdn.jsdelivr.net/gh/shrkwy/content.host@master/"
               >JsDelivr</a
             >
           </li>
@@ -144,7 +144,7 @@
           let fileDownloadUrl = "";
 
           if (fileName) {
-            fileDownloadUrl = `/files/${fileName}`;
+            fileDownloadUrl = `https://cdn.jsdelivr.net/gh/shrkwy/content.host@master/file/${fileName}`;
             fileNameElement.innerHTML = `File name: <strong>${fileName}</strong>`;
           } else if (driveId) {
             fileDownloadUrl = `https://drive.google.com/uc?export=download&id=${driveId}`;
