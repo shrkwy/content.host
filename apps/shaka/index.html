@@ -19,7 +19,7 @@
     <!-- Shaka Player CSS -->
     <link rel="stylesheet" href="controls.css" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./playerTheme.css" />
+    <link rel="stylesheet" href="playerTheme.css" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
         rel="stylesheet" />
 
@@ -63,7 +63,7 @@
         const params = new URLSearchParams(window.location.search);
         const manifestUri = params.get('link');
         const fullscreenMode = params.has('fullscreen');
-        const svgPath = './spinner.svg';
+        const svgPath = 'spinner.svg';
         //Loading the shaka player
         document.addEventListener('shaka-ui-loaded', init);
         
