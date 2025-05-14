@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+    <!-- Setup theme-color -->
+    <!-- start theme color meta headers -->
+    <meta name="theme-color" content="#151515" />
+    <meta name="msapplication-navbutton-color" content="#151515" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <!-- end theme color meta headers -->
+
+    <!-- Setup Google Analytics -->
+
+    <!-- You can set your favicon here -->
+    <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+    <!-- end custom head snippets -->
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <title>apezNeon's Server.</title>
+    <meta name="generator" content="Jekyll v3.9.3" />
+    <meta property="og:title" content="minecraft server" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content="Index page for local friendly minecraft server hosted by @shrkwy"
+    />
+    <meta
+      property="og:description"
+      content="Index page for local friendly minecraft server hosted by @shrkwy"
+    />
+    <link rel="canonical" href="https://neonsmp.eu.org/web/minecraft" />
+    <meta property="og:url" content="https://neonsmp.eu.org/web/minecraft" />
+    <link rel="icon" type="image/png" sizes="192x192" href="https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/favicon-16x16.png">
+
+    <link rel="icon" type="image/x-icon" href="https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/favicon.ico">
+
+    <meta property="og:site_name" content="NeonSMP" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Minecraft Server" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "description": "Index page for local friendly minecraft server hosted by @shrkwy",
+        "headline": "minecraft server",
+        "name": "NeonSMP",
+        "url": "https://neonsmp.eu.org/web/minecraft"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>@apezNeon's Repo</h1>
+        </a>
+        <h2>
+          Index page for local friendly minecraft server hosted by @shrkwy
+        </h2>
+
+        <section id="downloads">
+          <a
+            href="minecraft://?addExternalServer=Warsail|play.neonsmp.eu.org:53554"
+            class="btn btn-github"
+            ><span class="icon"></span>Connect to server...</a
+          >
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="minecraft-repository">neonsmp.eu.org/status</h1>
+        <ul>
+          <li>
+            This is a repository that hosts all my minecraft addons and resource
+            packs.
+          </li>
+          <li>
+            Files from this repo. are available at :
+            <a href="https://cdn.jsdelivr.net/gh/shrkwy/content.host@main/"
+              ><img
+                src="https://data.jsdelivr.com/v1/package/gh/shrkwy/content.host/badge"
+            /></a>
+          </li>
+        </ul>
+        <br />
+        <hr />
+        <br />
+        <h2 id="server-details">Server details:</h2>
+        <p>
+          Servers are ready to rock! Online timings will be shown up in a while.
+          Webpage is in early phase, new features will be added shortly.
+        </p>
+
+        <br />
+        <h3 id="bedrock-server-">Bedrock server :</h3>
+        <ul>
+          <li>
+            IP :
+            <a
+              href="minecraft://?addExternalServer=Warsail|play.neonsmp.eu.org:53554"
+              >play.neonsmp.eu.org</a
+            >
+          </li>
+          <li>Port : 53554</li>
+        </ul>
+        <hr />
+
+        <h3>The Bedrock server status</h3>
+        <div id="server-info">
+          <h2>Loading server status...</h2>
+        </div>
+      </section>
+    </div>
+    <script>
+      const serverInfo = document.getElementById("server-info");
+
+      fetch("https://api.mcsrvstat.us/bedrock/3/play.neonsmp.eu.org:53554")
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.online) {
+            const players = data.players.online;
+            const maxPlayers = data.players.max;
+            const version = data.version;
+            const motd = data.motd.html.join("<br>");
+            const hostname = data.hostname;
+            const port = data.port;
+            const gamemode = data.gamemode;
+            const map = data.map;
+
+            serverInfo.innerHTML = `
+              <h3>Server is online...</h3>
+              <ul>
+                <li><strong>Hostname:</strong> ${hostname}</li>
+                <li><strong>Port:</strong> ${port}</li>
+                <li><strong>MOTD:</strong> ${motd}</li>
+                <li><strong>Players online:</strong> ${players}/${maxPlayers}</li>
+                <li><strong>Version:</strong> ${version}</li>
+                <li><strong>Game mode:</strong> ${gamemode}</li>
+                <li><strong>World Name:</strong> ${map}</li>
+              </ul>
+            `;
+          } else {
+            serverInfo.innerHTML = "<h3>Server is offline...</h3>";
+          }
+        })
+        .catch((error) => {
+          serverInfo.innerHTML = "<p>Error fetching server status</p>";
+          console.error(error);
+        });
+    </script>
+  </body>
+</html>

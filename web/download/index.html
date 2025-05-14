@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../minecraft/style.css" />
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+    <!-- Setup theme-color -->
+    <!-- start theme color meta headers -->
+    <meta name="theme-color" content="#151515" />
+    <meta name="msapplication-navbutton-color" content="#151515" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <!-- end theme color meta headers -->
+
+    <!-- You can set your favicon here -->
+    <!-- link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" -->
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <title>Dynamic D-load</title>
+    <meta name="generator" content="Jekyll v3.9.3" />
+    <meta property="og:title" content="apezNeon D-load" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content="Download files from apezNeon's repository and from other sources."
+    />
+    <meta
+      property="og:description"
+      content="Download files from apezNeon's repository and from other sources."
+    />
+    <link rel="canonical" href="https://neonsmp.eu.org/web/download/" />
+    <meta property="og:url" content="https://neonsmp.eu.org/web/download/" />
+    <meta property="og:site_name" content="Dynamic Download Page" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="apezNeon D-load" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "description": "Download files from apezNeon's repository and from other sources.",
+        "headline": "apezNeon D-load",
+        "name": "Dynamic Download Page",
+        "url": "https://neonsmp.eu.org/web/download"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>@apezNeon's D-load</h1>
+        </a>
+        <h2>
+          The page where all downloads from `neonsmp.eu.org` are linked for ad
+          revenue.
+        </h2>
+
+        <section id="downloads">
+          <a
+            href="minecraft://?addExternalServer=Accently|play.neonsmp.eu.org:11648"
+            class="btn btn-github"
+            ><span class="icon"></span>Join server...</a
+          >
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="minecraft-repository">web/download</h1>
+        <ul>
+          <li>
+            This is page is final download page for all files hosted on the
+            repo. or outside.
+          </li>
+          <li>
+            Files from the repo. are available at :
+            <a href="https://cdn.jsdelivr.net/gh/shrkwy/content.host@main/"
+              >JsDelivr</a
+            >
+          </li>
+        </ul>
+        <br />
+        <hr />
+        <br />
+        <div style="text-align: center" id="download">
+          <a
+            id="linker"
+            href="/web/download?act=Download_empty"
+          >
+            <img
+              src="/web/download/download-button.png"
+              border="0"
+            />
+          </a>
+          <br />
+          <span id="file_name">File name: <strong>Nothing</strong></span>
+          <br />
+          -
+          <br />
+          <span id="file_size"> File size: <strong>0 MB</strong></span>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div style="padding: 10px; text-align: center" class="footer">
+        Copyright ©
+        <a href="/web/download" title="apezNeon">apezNeon</a>
+      </div>
+    </footer>
+    <script>
+      const currentYear = new Date().getFullYear();
+      const yearElement = document.querySelector(".footer");
+      yearElement.innerHTML +=
+        " " + currentYear + "./  Every file is not stored on the repo.";
+
+      // Rest of code.
+      const urlParams = new URLSearchParams(window.location.search);
+      const fileName = urlParams.get("file");
+      const driveId = urlParams.get("drive");
+      const fileUrl = urlParams.get("url");
+
+      if (fileName || driveId || fileUrl) {
+        if (
+          (fileName && driveId) ||
+          (fileName && fileUrl) ||
+          (driveId && fileUrl)
+        ) {
+          document.querySelector("#download").innerHTML =
+            "Please specify only one of files, drive or url parameter.";
+        } else {
+          const linkerElement = document.querySelector("#linker");
+          const fileNameElement = document.querySelector("#file_name");
+          const fileSizeElement = document.querySelector("#file_size");
+          let fileDownloadUrl = "";
+
+          if (fileName) {
+            fileDownloadUrl = `/files/${fileName}`;
+            fileNameElement.innerHTML = `File name: <strong>${fileName}</strong>`;
+          } else if (driveId) {
+            fileDownloadUrl = `https://drive.google.com/uc?export=download&id=${driveId}`;
+            fileNameElement.innerHTML = `File name: <strong>${driveId}</strong>`;
+          } else if (fileUrl) {
+            const regex = /[^/]*$/;
+            const match = fileUrl.match(regex);
+            if (match) {
+              const filename = match[0];
+              fileDownloadUrl = fileUrl;
+              fileNameElement.innerHTML = `File name: <strong>${filename}</strong>`;
+            } else {
+              document.querySelector("#download").innerHTML =
+                "Invalid file URL provided.";
+            }
+          }
+
+          linkerElement.href = fileDownloadUrl;
+
+          fetch(fileDownloadUrl)
+            .then((response) => {
+              if (response.ok) {
+                const contentLengthHeader =
+                  response.headers.get("Content-Length");
+                if (contentLengthHeader !== null) {
+                  console.log("Request Data Size : " + contentLengthHeader);
+                  const sizeInBytes = parseInt(contentLengthHeader);
+                  const sizeInMb = (sizeInBytes / (1024 * 1024)).toFixed(3);
+                  fileSizeElement.innerHTML = `File size: <strong>${sizeInMb} MB</strong>`;
+                } else {
+                  fileSizeElement.innerHTML =
+                    "File size: <strong>undefined</strong>";
+                }
+              } else {
+                throw new Error("File not found or inaccessible");
+              }
+            })
+            .catch((error) => {
+              console.error("Error fetching file size,", error);
+              fileSizeElement.innerHTML = "File size: <strong>Error</strong>";
+            });
+        }
+      } else {
+        document.querySelector("#download").innerHTML =
+          "Please specify a file name, Google Drive ID or file URL.";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="./hola_player.js"></script>
+  <title>Spark Player Project</title>
+  <link type="image/png" rel="shortcut icon" href="/img/video-player/favicon.png" />
+  <link type="image/png" rel="icon" href="/img/video-player/favicon.png" />
+  <link type="image/png" rel="apple-touch-icon" href="/img/video-player/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet" />
+
+  <style>
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    .hola_seek_zone {
+      display: none !important;
+    }
+
+    body {
+      font-family: 'Lexend Deca', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #000;
+    }
+
+    #video-container {
+      width: 100%;
+    }
+
+    /* Apply max-width only on larger displays */
+    @media (min-width: 768px) {
+      #video-container {
+        width: 100%;
+        max-width: 1440px;
+      }
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+
+    .vjs5-hola-skin,
+    .video-js,
+    #player,
+    .video-js div {
+      font-family: "Lexend Deca", Roboto, Arial, Helvetica, sans-serif !important;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* after your existing CSS */
+    .video-js,
+    .vjs-control-bar {
+      font-size: 14px !important;
+      /* you can tweak this up/down */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="video-container"></div>
+
+  <template id="video-template">
+    <video id="player" class="video-js video vjs-default-skin" controls preload="none"
+      data-poster="https://picsum.photos/1200/675.webp">
+      <source type="application/x-mpegURL">
+    </video>
+  </template>
+
+  <script>
+    (function () {
+      const src = new URLSearchParams(location.search).get('link');
+      if (!src) return;
+
+      // Clone and inject template
+      const template = document.getElementById('video-template').content.cloneNode(true);
+      template.querySelector('source').src = src;
+      document.getElementById('video-container').appendChild(template);
+
+      // Init player
+      window.hola_player && requestAnimationFrame(window.hola_player);
+    })();
+  </script>
+</body>
+
+</html>
