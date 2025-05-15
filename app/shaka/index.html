@@ -4,23 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="preconnect" href="//cdn.jsdelivr.net" />
     <title>Shaka Player Project</title>
 
-    <!-- Shaka Player Libraries
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.13.2/shaka-player.compiled.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.13.2/shaka-player.ui.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mux.js@6.2.0/dist/mux.js"></script>-->
-    <script src="/app/shaka/shaka-player.compiled.js"></script>
-    <script src="/app/shaka/shaka-player.ui.js"></script>
-    <script src="/app/shaka/ui_fix_initiator.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script defer src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+    <!-- Preload -->
 
-    <!-- Shaka Player CSS -->
-    <link rel="stylesheet" href="/app/shaka/controls.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Shaka Player Libraries
+    <script src="/app/shaka/shaka-player.compiled.js"></script>
+    <script src="/app/shaka/shaka-player.ui.js"></script>-->
+    <script src="//cdn.jsdelivr.net/npm/shaka-player@4.13.21/dist/shaka-player.compiled.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/shaka-player@4.13.21/dist/shaka-player.ui.min.js"></script>
+    <script src="/app/shaka/ui_fix_initiator.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script defer src="//www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+
+    <!-- Shaka Player CSS 
+    <link rel="stylesheet" href="/app/shaka/controls.css" />-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/shaka-player@4.13.21/dist/controls.css" />
+    <link href="//fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/app/shaka/playerTheme.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
+    <link href="//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
         rel="stylesheet" />
 
     <!-- Icons -->
@@ -36,7 +39,7 @@
         * {
             scrollbar-width: none;
         }
-        
+
         body {
             font-family: 'DM Sans', serif;
             display: flex;
@@ -111,22 +114,22 @@
             ui.configure(config);
             // player.configure("streaming.forceTransmuxTS", true); // only for v4.2.0 and below
 
-            // Attach player and UI to the window to make it easy to access in the JS console.
-            window.player = player;
-            window.ui = ui;
-            player.addEventListener('error', onPlayerErrorEvent);
-            controls.addEventListener('error', onUIErrorEvent);
-
+            
             player.load(manifestUri).then(() => {
                 console.log('Loading video succeeded!');
             }).catch(onPlayerError);
 
+            // Attach player and UI to the window to make it easy to access in the JS console.
+            // window.player = player;
+            // window.ui = ui;
+            player.addEventListener('error', onPlayerErrorEvent);
+            controls.addEventListener('error', onUIErrorEvent);
 
             // Below are 3 UI fixes
             replaceSpinnerSVG(svgPath);
             replaceIcons();
             //replaceUndeterminedText();
-
+            bigPlaySetup();
         }
     </script>
 </body>
