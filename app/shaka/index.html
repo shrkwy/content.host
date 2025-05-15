@@ -11,17 +11,16 @@
 
     <!-- Shaka Player Libraries
     <script src="/app/shaka/shaka-player.compiled.js"></script>
-    <script src="/app/shaka/shaka-player.ui.js"></script>-->
-    <script src="//cdn.jsdelivr.net/npm/shaka-player@4.13.21/dist/shaka-player.compiled.js"></script>
+    <script src="/app/shaka/shaka-player.ui.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/shaka-player@4.13.21/dist/shaka-player.compiled.js"></script>-->
     <script src="//cdn.jsdelivr.net/npm/shaka-player@4.13.21/dist/shaka-player.ui.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="/app/shaka/ui_fix_initiator.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script defer src="//www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
 
     <!-- Shaka Player CSS 
     <link rel="stylesheet" href="/app/shaka/controls.css" />-->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/shaka-player@4.13.21/dist/controls.css" />
-    <link href="//fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/app/shaka/playerTheme.css" />
     <link href="//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
         rel="stylesheet" />
@@ -41,7 +40,7 @@
         }
 
         body {
-            font-family: 'DM Sans', serif;
+            font-family: 'DM Sans', "Roboto", serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -67,7 +66,7 @@
     <!-- Shaka Player Container -->
     <div class="youtube-theme" id="video-container" data-shaka-player-container
         data-shaka-player-cast-receiver-id="07AEE832">
-        <video poster='https://picsum.photos/1200/675.webp?grayscale' data-shaka-player id="video"></video>
+        <video preload="auto" data-shaka-player id="video"></video>
     </div>
 
     <script>
