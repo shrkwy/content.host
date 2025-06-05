@@ -1,0 +1,180 @@
+/*!
+ * Custom Dark-Purple Giscus Theme for Shan’s Tech Diaries
+ * 
+ * This standalone CSS overrides Giscus’s default dark theme variables
+ * to use a “zinc + purple” color palette matching your Tailwind setup.
+ * Place this file (e.g., `giscus-dark-purple.css`) on any public host with CORS.
+ */
+
+/* Apply overrides directly on the Giscus iframe’s <main> */
+main {
+  /* Canvas / background */
+  --color-canvas-default: #18181B;         /* zinc-900 */
+  --color-canvas-overlay: #1F1F23;         /* zinc-800 */
+  --color-canvas-inset: #27272A;           /* zinc-800 (slightly lighter) */
+  --color-canvas-subtle: #3F3F46;          /* zinc-700 */
+
+  /* Text colors */
+  --color-fg-default: #D1D5DB;             /* gray-300 */
+  --color-fg-muted: #9CA3AF;               /* gray-400 */
+  --color-fg-subtle: #6B7280;              /* gray-500 */
+
+  /* Borders */
+  --color-border-default: #4B5563;          /* gray-600 */
+  --color-border-muted: #374151;            /* gray-700 */
+  --color-neutral-muted: rgba(107, 114, 128, 0.4); /* gray-500@40% */
+
+  /* Accent (purple) */
+  --color-accent-fg: #7C3AED;              /* violet-500 */
+  --color-accent-emphasis: #5B21B6;         /* violet-700 */
+  --color-accent-muted: rgba(124, 58, 237, 0.4);  /* violet-500@40% */
+  --color-accent-subtle: rgba(124, 58, 237, 0.1); /* violet-500@10% */
+
+  /* Buttons */
+  --color-btn-text: #FFFFFF;               /* white */
+  --color-btn-bg: #7C3AED;                 /* violet-500 */
+  --color-btn-border: rgba(124, 58, 237, 0.2); /* violet-500@20% */
+  --color-btn-hover-bg: #5B21B6;            /* violet-700 */
+
+  /* Segmented control */
+  --color-segmented-control-bg: #374151;    /* gray-700 */
+  --color-segmented-control-button-bg: #27272A; /* zinc-800 */
+  --color-segmented-control-button-selected-border: #7C3AED; /* violet-500 */
+  
+  /* Prettylights syntax (dark mode adjustments) */
+  --color-prettylights-syntax-comment: #6B7280;                     /* gray-500 */
+  --color-prettylights-syntax-constant: #6CB6FF;                    /* light blue */
+  --color-prettylights-syntax-entity: #DCBDFB;                      /* lavender */
+  --color-prettylights-syntax-storage-modifier-import: #ADBAC7;      /* gray-400 */
+  --color-prettylights-syntax-entity-tag: #8DDB8C;                  /* light green */
+  --color-prettylights-syntax-keyword: #F47067;                     /* light red */
+  --color-prettylights-syntax-string: #96D0FF;                      /* sky blue */
+  --color-prettylights-syntax-variable: #F69D50;                    /* orange */
+  --color-prettylights-syntax-brackethighlighter-unmatched: #E5534B; /* red */
+  --color-prettylights-syntax-invalid-illegal-text: #CDD9E5;        /* off-white */
+  --color-prettylights-syntax-invalid-illegal-bg: #922323;          /* dark red */
+  --color-prettylights-syntax-carriage-return-text: #CDD9E5;        /* off-white */
+  --color-prettylights-syntax-carriage-return-bg: #AD2E2C;          /* deep red */
+  --color-prettylights-syntax-string-regexp: #8DDB8C;               /* light green */
+  --color-prettylights-syntax-markup-list: #EAC55F;                 /* gold */
+  --color-prettylights-syntax-markup-heading: #316DCA;              /* blue */
+  --color-prettylights-syntax-markup-italic: #ADBAC7;               /* gray-400 */
+  --color-prettylights-syntax-markup-bold: #ADBAC7;                 /* gray-400 */
+  --color-prettylights-syntax-markup-deleted-text: #FFD8D3;         /* pink */
+  --color-prettylights-syntax-markup-deleted-bg: #78191B;           /* dark red */
+  --color-prettylights-syntax-markup-inserted-text: #B4F1B4;        /* mint */
+  --color-prettylights-syntax-markup-inserted-bg: #1B4721;          /* dark green */
+  --color-prettylights-syntax-markup-changed-text: #FFDBB0;         /* light orange */
+  --color-prettylights-syntax-markup-changed-bg: #682D0F;           /* brown */
+  --color-prettylights-syntax-markup-ignored-text: #ADBAC7;         /* gray-400 */
+  --color-prettylights-syntax-markup-ignored-bg: #255AB2;           /* mid-blue */
+  --color-prettylights-syntax-meta-diff-range: #DCBDFB;             /* lavender */
+  --color-prettylights-syntax-brackethighlighter-angle: #768390;    /* gray-500 */
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #545D68;   /* gray-600 */
+  --color-prettylights-syntax-constant-other-reference-link: #96D0FF;/* sky blue */
+}
+
+/* --------------- */
+/* Giscus Overrides */
+/* --------------- */
+
+/* Individual comment container */
+main .gsc-comment {
+  background-color: var(--color-checks-bg);
+  border: 1px solid var(--color-border-default);
+  border-radius: 0.375rem; /* rounded-md */
+}
+
+/* Comment author username */
+main .gsc-comment-username {
+  color: var(--color-accent-fg);
+  font-weight: 500;
+}
+
+/* Comment text body */
+main .gsc-comment-body {
+  color: var(--color-fg-default);
+}
+
+/* Links inside comments */
+main .gsc-comment-body a {
+  color: var(--color-accent-emphasis);
+  text-decoration: underline;
+}
+
+/* Comment metadata (timestamp, reply button text) */
+main .gsc-comment-date,
+main .gsc-comment-meta {
+  color: var(--color-fg-muted);
+}
+
+/* Reaction buttons (Like, etc.) */
+main .gsc-reaction-button {
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  border: none;
+  border-radius: 0.375rem;
+}
+main .gsc-reaction-button:hover {
+  background-color: var(--color-btn-hover-bg);
+}
+
+/* Textarea for new comment */
+main .gsc-comment-form textarea {
+  background-color: var(--color-checks-bg);
+  color: var(--color-fg-default);
+  border: 1px solid var(--color-border-muted);
+  border-radius: 0.375rem;
+}
+
+/* Submit button in comment form */
+main .gsc-comment-form button {
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  border: none;
+  border-radius: 0.375rem;
+}
+main .gsc-comment-form button:hover {
+  background-color: var(--color-btn-hover-bg);
+}
+
+/* Timeline separator line */
+main .gsc-timeline .gsc-separator {
+  background-color: var(--color-border-muted);
+}
+
+/* Loading spinner (dark dimmed) */
+main .gsc-loading-image {
+  background-image: url('https://github.githubassets.com/images/mona-loading-dimmed.gif');
+}
+
+/* Hide the reactions-count badge if you want */
+.gsc-reactions-count {
+  display: none;
+}
+
+/* Ensure timeline is reversed (newest at bottom) */
+.gsc-timeline {
+  flex-direction: column-reverse;
+}
+
+/* Adjust header padding */
+.gsc-header {
+  padding-bottom: 1rem;
+}
+
+/* Define ordering inside comments container */
+.gsc-comments > .gsc-header {
+  order: 1;
+}
+.gsc-comments > .gsc-comment-box {
+  margin-bottom: 1rem;
+  order: 2;
+}
+.gsc-comments > .gsc-timeline {
+  order: 3;
+}
+
+/* Optional: background for Giscus homepage */
+.gsc-homepage-bg {
+  background-col
