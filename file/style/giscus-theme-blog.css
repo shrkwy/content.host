@@ -1,80 +1,45 @@
 /*!
  * Standalone Giscus Theme for Shan’s Tech Diaries
  * 
- * Based on the provided “Dark Dimmed” demo and your OKLCH Tailwind palette.
- * Save this file as `giscus-theme.css` on any publicly accessible host
- * (e.g. GitHub Gist raw URL, jsDelivr, or any static file server with CORS enabled).
- *
- * The theme auto-switches between light and dark modes using prefers-color-scheme.
+ * Adjusted to use:
+ *  - Light mode: white + purple accents
+ *  - Dark mode: zinc (dark gray) + purple accents
+ * 
+ * Save as `giscus-theme.css` on a public, CORS-enabled host.
  */
-
 
 /* ----------------------- */
 /* Light-Mode Variables   */
 /* ----------------------- */
 :root {
-  /* Canvas (background behind comments) */
-  --color-canvas-default: #FFFFFF;                    /* light gray / white */
-  --color-canvas-overlay: #F9FAFB;                    /* very light gray */
-  --color-canvas-inset: #F3F4F6;                      /* gray-100 */
-  --color-canvas-subtle: #E5E7EB;                     /* gray-200 */
+  /* Comment box background */
+  --color-checks-bg: #FFFFFF;           /* pure white */
+  --color-canvas-inset: #F3F4F6;        /* light gray for subtle backgrounds */
 
   /* Text Colors */
-  --color-fg-default: #1F2937;                        /* gray-800 */
-  --color-fg-muted: #4B5563;                          /* gray-600 */
-  --color-fg-subtle: #6B7280;                         /* gray-500 */
+  --color-fg-default: #1F2937;          /* gray-800 */
+  --color-fg-muted: #4B5563;            /* gray-600 */
+  --color-fg-subtle: #6B7280;           /* gray-500 */
 
   /* Borders */
-  --color-border-default: #E5E7EB;                    /* gray-200 */
-  --color-border-muted: #D1D5DB;                      /* gray-300 */
-  --color-neutral-muted: rgba(99, 115, 128, 0.4);     /* gray-500 at 40% */
+  --color-border-default: #E5E7EB;      /* gray-200 */
+  --color-border-muted: #D1D5DB;        /* gray-300 */
 
-  /* Accent / Primary */
-  --color-accent-fg: #7C3AED;                         /* primary-500 */
-  --color-accent-emphasis: #5B21B6;                    /* primary-700 */
-  --color-accent-muted: rgba(124, 58, 237, 0.4);       /* primary-500 at 40% */
-  --color-accent-subtle: rgba(124, 58, 237, 0.1);      /* primary-500 at 10% */
+  /* Accent / Primary (purple) */
+  --color-accent-fg: #7C3AED;           /* primary-500 */
+  --color-accent-emphasis: #5B21B6;      /* primary-700 */
+  --color-accent-muted: rgba(124, 58, 237, 0.4);  /* primary-500 at 40% */
+  --color-accent-subtle: rgba(124, 58, 237, 0.1); /* primary-500 at 10% */
 
   /* Buttons */
-  --color-btn-text: #FFFFFF;                          /* white */
-  --color-btn-bg: #7C3AED;                            /* primary-500 */
-  --color-btn-border: rgba(124, 58, 237, 0.1);         /* primary-500 at 10% */
-  --color-btn-hover-bg: #5B21B6;                       /* primary-700 */
-  --color-btn-primary-selected-bg: #7C3AED;            /* primary-500 */
-
-  /* Syntax Highlighting (Prettylights) */
-  --color-prettylights-syntax-comment: #768390;
-  --color-prettylights-syntax-constant: #6CB6FF;
-  --color-prettylights-syntax-entity: #DCBDFB;
-  --color-prettylights-syntax-storage-modifier-import: #ADBAC7;
-  --color-prettylights-syntax-entity-tag: #8DDB8C;
-  --color-prettylights-syntax-keyword: #F47067;
-  --color-prettylights-syntax-string: #96D0FF;
-  --color-prettylights-syntax-variable: #F69D50;
-  --color-prettylights-syntax-brackethighlighter-unmatched: #E5534B;
-  --color-prettylights-syntax-invalid-illegal-text: #CDD9E5;
-  --color-prettylights-syntax-invalid-illegal-bg: #922323;
-  --color-prettylights-syntax-carriage-return-text: #CDD9E5;
-  --color-prettylights-syntax-carriage-return-bg: #AD2E2C;
-  --color-prettylights-syntax-string-regexp: #8DDB8C;
-  --color-prettylights-syntax-markup-list: #EAC55F;
-  --color-prettylights-syntax-markup-heading: #316DCA;
-  --color-prettylights-syntax-markup-italic: #ADBAC7;
-  --color-prettylights-syntax-markup-bold: #ADBAC7;
-  --color-prettylights-syntax-markup-deleted-text: #FFD8D3;
-  --color-prettylights-syntax-markup-deleted-bg: #78191B;
-  --color-prettylights-syntax-markup-inserted-text: #B4F1B4;
-  --color-prettylights-syntax-markup-inserted-bg: #1B4721;
-  --color-prettylights-syntax-markup-changed-text: #FFDBB0;
-  --color-prettylights-syntax-markup-changed-bg: #682D0F;
-  --color-prettylights-syntax-markup-ignored-text: #ADBAC7;
-  --color-prettylights-syntax-markup-ignored-bg: #255AB2;
-  --color-prettylights-syntax-meta-diff-range: #DCBDFB;
-  --color-prettylights-syntax-brackethighlighter-angle: #768390;
-  --color-prettylights-syntax-sublimelinter-gutter-mark: #545D68;
-  --color-prettylights-syntax-constant-other-reference-link: #96D0FF;
-
-  /* Other Prism-like variables (if any) can go here similarly */
+  --color-btn-text: #FFFFFF;            /* white */
+  --color-btn-bg: #7C3AED;              /* primary-500 */
+  --color-btn-hover-bg: #5B21B6;         /* primary-700 */
+  
+  /* Segmented control (tab) backgrounds */
+  --color-segmented-control-bg: #E5E7EB;           /* gray-200 */
+  --color-segmented-control-button-bg: #FFFFFF;    /* white */
+  --color-segmented-control-button-selected-border: #7C3AED; /* primary-500 */
 }
 
 /* ----------------------- */
@@ -82,66 +47,34 @@
 /* ----------------------- */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Canvas (dark) */
-    --color-canvas-default: #111827;                 /* gray-900 */
-    --color-canvas-overlay: #161B22;                 /* gray-950 */
-    --color-canvas-inset: #1F2937;                   /* gray-800 */
-    --color-canvas-subtle: #253341;                  /* gray-700 */
+    /* Dark comment box background (zinc) */
+    --color-checks-bg: #27272A;           /* zinc-900 */
+    --color-canvas-inset: #3F3F46;        /* zinc-800 */
 
-    /* Text Colors (dark) */
-    --color-fg-default: #D1D5DB;                     /* gray-300 */
-    --color-fg-muted: #9CA3AF;                       /* gray-400 */
-    --color-fg-subtle: #6B7280;                      /* gray-500 */
+    /* Text Colors in dark */
+    --color-fg-default: #D1D5DB;          /* gray-300 */
+    --color-fg-muted: #9CA3AF;            /* gray-400 */
+    --color-fg-subtle: #6B7280;           /* gray-500 */
 
-    /* Borders (dark) */
-    --color-border-default: #374151;                  /* gray-700 */
-    --color-border-muted: #4B5563;                    /* gray-600 */
-    --color-neutral-muted: rgba(107, 114, 128, 0.4);  /* gray-500 at 40% */
+    /* Borders in dark */
+    --color-border-default: #4B5563;       /* gray-600 */
+    --color-border-muted: #374151;         /* gray-700 */
 
-    /* Accent / Primary (dark) */
-    --color-accent-fg: #A78BFA;                       /* primary-400 */
-    --color-accent-emphasis: #C084FC;                 /* primary-300 */
-    --color-accent-muted: rgba(167, 139, 250, 0.4);    /* primary-400 at 40% */
-    --color-accent-subtle: rgba(167, 139, 250, 0.1);   /* primary-400 at 10% */
+    /* Accent / Primary (purple) in dark */
+    --color-accent-fg: #A78BFA;            /* primary-400 */
+    --color-accent-emphasis: #C084FC;      /* primary-300 */
+    --color-accent-muted: rgba(167, 139, 250, 0.4); /* primary-400 at 40% */
+    --color-accent-subtle: rgba(167, 139, 250, 0.1);/* primary-400 at 10% */
 
-    /* Buttons (dark) */
-    --color-btn-text: #FFFFFF;                        /* white */
-    --color-btn-bg: #7C3AED;                          /* primary-500 */
-    --color-btn-border: rgba(167, 139, 250, 0.1);      /* primary-400 at 10% */
-    --color-btn-hover-bg: #5B21B6;                     /* primary-700 */
-    --color-btn-primary-selected-bg: #7C3AED;          /* primary-500 */
-
-    /* Syntax Highlighting (dark overrides) */
-    --color-prettylights-syntax-comment: #768390;
-    --color-prettylights-syntax-constant: #6CB6FF;
-    --color-prettylights-syntax-entity: #DCBDFB;
-    --color-prettylights-syntax-storage-modifier-import: #ADBAC7;
-    --color-prettylights-syntax-entity-tag: #8DDB8C;
-    --color-prettylights-syntax-keyword: #F47067;
-    --color-prettylights-syntax-string: #96D0FF;
-    --color-prettylights-syntax-variable: #F69D50;
-    --color-prettylights-syntax-brackethighlighter-unmatched: #E5534B;
-    --color-prettylights-syntax-invalid-illegal-text: #CDD9E5;
-    --color-prettylights-syntax-invalid-illegal-bg: #922323;
-    --color-prettylights-syntax-carriage-return-text: #CDD9E5;
-    --color-prettylights-syntax-carriage-return-bg: #AD2E2C;
-    --color-prettylights-syntax-string-regexp: #8DDB8C;
-    --color-prettylights-syntax-markup-list: #EAC55F;
-    --color-prettylights-syntax-markup-heading: #316DCA;
-    --color-prettylights-syntax-markup-italic: #ADBAC7;
-    --color-prettylights-syntax-markup-bold: #ADBAC7;
-    --color-prettylights-syntax-markup-deleted-text: #FFD8D3;
-    --color-prettylights-syntax-markup-deleted-bg: #78191B;
-    --color-prettylights-syntax-markup-inserted-text: #B4F1B4;
-    --color-prettylights-syntax-markup-inserted-bg: #1B4721;
-    --color-prettylights-syntax-markup-changed-text: #FFDBB0;
-    --color-prettylights-syntax-markup-changed-bg: #682D0F;
-    --color-prettylights-syntax-markup-ignored-text: #ADBAC7;
-    --color-prettylights-syntax-markup-ignored-bg: #255AB2;
-    --color-prettylights-syntax-meta-diff-range: #DCBDFB;
-    --color-prettylights-syntax-brackethighlighter-angle: #768390;
-    --color-prettylights-syntax-sublimelinter-gutter-mark: #545D68;
-    --color-prettylights-syntax-constant-other-reference-link: #96D0FF;
+    /* Buttons in dark */
+    --color-btn-text: #FFFFFF;             /* white */
+    --color-btn-bg: #7C3AED;               /* primary-500 */
+    --color-btn-hover-bg: #5B21B6;          /* primary-700 */
+    
+    /* Segmented control (tab) backgrounds in dark */
+    --color-segmented-control-bg: #374151;          /* gray-700 */
+    --color-segmented-control-button-bg: #27272A;   /* zinc-900 */
+    --color-segmented-control-button-selected-border: #A78BFA; /* primary-400 */
   }
 }
 
@@ -150,20 +83,12 @@
 /* Giscus Component Tweaks */
 /* ----------------------- */
 
-/* Container behind all comments */
-main .gsc-comments {
-  background-color: var(--color-canvas-default);
-}
+/* Remove background override for entire comments container */
+/* (we rely on the page’s own background behind the iframe) */
 
-/* Header bar for comments (title, etc.) */
-main .gsc-header {
-  color: var(--color-fg-default);
-  border-bottom: 1px solid var(--color-border-default);
-}
-
-/* Individual comment box */
+/* Individual comment box background & border */
 main .gsc-comment {
-  background-color: var(--color-canvas-inset);
+  background-color: var(--color-checks-bg);
   border: 1px solid var(--color-border-default);
   border-radius: 0.375rem; /* rounded-md */
 }
@@ -174,23 +99,18 @@ main .gsc-comment-username {
   font-weight: 500;
 }
 
-/* Comment avatar wrapper (if applicable) */
-main .gsc-comment-avatar {
-  border: 2px solid var(--color-border-default);
-}
-
 /* Comment text body */
 main .gsc-comment-body {
   color: var(--color-fg-default);
 }
 
-/* Links inside comment bodies */
+/* Links inside comments */
 main .gsc-comment-body a {
   color: var(--color-accent-emphasis);
   text-decoration: underline;
 }
 
-/* Comment metadata (timestamp, reply button) */
+/* Comment metadata (timestamp, reply button text) */
 main .gsc-comment-date,
 main .gsc-comment-meta {
   color: var(--color-fg-muted);
@@ -209,7 +129,7 @@ main .gsc-reaction-button:hover {
 
 /* Textarea for new comment */
 main .gsc-comment-form textarea {
-  background-color: var(--color-canvas-inset);
+  background-color: var(--color-checks-bg);
   color: var(--color-fg-default);
   border: 1px solid var(--color-border-muted);
   border-radius: 0.375rem;
@@ -236,22 +156,22 @@ main .gsc-loading-image {
   background-image: url('https://github.githubassets.com/images/mona-loading-dimmed.gif');
 }
 
-/* Hide the reactions count circle if you prefer */
+/* Hide reactions count badge if not needed */
 .gsc-reactions-count {
   display: none;
 }
 
-/* Invert layout order if needed */
+/* Timeline ordering */
 .gsc-timeline {
   flex-direction: column-reverse;
 }
 
-/* Adjust padding for header on mobile */
+/* Adjust header padding */
 .gsc-header {
   padding-bottom: 1rem;
 }
 
-/* Example: Make sure the comment box appears below the header */
+/* Ensure header order */
 .gsc-comments > .gsc-header {
   order: 1;
 }
@@ -263,7 +183,7 @@ main .gsc-loading-image {
   order: 3;
 }
 
-/* If you want a custom background for the Giscus homepage (not always used) */
+/* Homepage background (optional) */
 .gsc-homepage-bg {
-  background-color: var(--color-canvas-overlay);
+  background-color: var(--color-canvas-inset);
 }
