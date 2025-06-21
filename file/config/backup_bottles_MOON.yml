@@ -1,0 +1,300 @@
+Arch: win64
+CompatData: ''
+Creation_Date: '2025-06-16 21:32:58.108993'
+Custom_Path: false
+DLL_Overrides: {}
+DXVK: dxvk-2.6.2
+Environment: Custom
+Environment_Variables: {}
+External_Programs:
+    05232b74-1bdb-49f4-aec9-53a2b78c06b7:
+        arguments: ''
+        dxvk: null
+        dxvk_nvapi: null
+        executable: farcry3.exe
+        folder: /mnt/helium/Far Cry 3 - Duology/Far Cry 3/bin
+        fsr: null
+        gamescope: null
+        icon: com.usebottles.bottles-program
+        id: 05232b74-1bdb-49f4-aec9-53a2b78c06b7
+        name: Far Cry 3
+        path: /mnt/helium/Far Cry 3 - Duology/Far Cry 3/bin/farcry3.exe
+        post_script: null
+        pre_script: null
+        pulseaudio_latency: null
+        removed: null
+        virtual_desktop: false
+        vkd3d: null
+    137af832-e55a-437d-b139-ee0452f68b95:
+        arguments: null
+        dxvk: null
+        dxvk_nvapi: null
+        executable: speed.exe
+        folder: /mnt/quantum/Need For Speed Most Wanted Black Edition
+        fsr: null
+        gamescope: null
+        icon: com.usebottles.bottles-program
+        id: 137af832-e55a-437d-b139-ee0452f68b95
+        name: Need For Speed Most Wanted Black Edition
+        path: /mnt/quantum/Need For Speed Most Wanted Black Edition/speed.exe
+        post_script: null
+        pre_script: null
+        pulseaudio_latency: null
+        removed: null
+        virtual_desktop: null
+        vkd3d: null
+    16e3f73e-1170-48ee-be8d-9ca6cad4627a:
+        arguments: null
+        dxvk: null
+        dxvk_nvapi: null
+        executable: iw4sp.exe
+        folder: /mnt/quantum/Call of Duty/Call of Duty - Modern Warfare 2
+        fsr: null
+        gamescope: null
+        icon: com.usebottles.bottles-program
+        id: 16e3f73e-1170-48ee-be8d-9ca6cad4627a
+        name: Call of Duty - Modern Warfare 2
+        path: /mnt/quantum/Call of Duty/Call of Duty - Modern Warfare 2/iw4sp.exe
+        post_script: null
+        pre_script: null
+        pulseaudio_latency: null
+        removed: null
+        virtual_desktop: null
+        vkd3d: null
+    1d6c3f83-1274-4642-972d-6baf5ae00803:
+        arguments: null
+        dxvk: null
+        dxvk_nvapi: null
+        executable: GTAIV.exe
+        folder: /mnt/helium/Grand Theft Auto IV - The Complete Edition
+        fsr: null
+        gamescope: null
+        icon: com.usebottles.bottles-program
+        id: 1d6c3f83-1274-4642-972d-6baf5ae00803
+        name: Grand Theft Auto 4
+        path: /mnt/helium/Grand Theft Auto IV - The Complete Edition/GTAIV.exe
+        post_script: null
+        pre_script: null
+        pulseaudio_latency: null
+        removed: null
+        virtual_desktop: null
+        vkd3d: null
+    33ad7fcc-e434-4734-bba7-e9da012261ac:
+        arguments: null
+        dxvk: null
+        dxvk_nvapi: null
+        executable: iw3sp.exe
+        folder: /mnt/quantum/Call of Duty/Call of Duty - Modern Warfare 1
+        fsr: null
+        gamescope: null
+        icon: com.usebottles.bottles-program
+        id: 33ad7fcc-e434-4734-bba7-e9da012261ac
+        name: Call of Duty - Modern Warfare 1
+        path: /mnt/quantum/Call of Duty/Call of Duty - Modern Warfare 1/iw3sp.exe
+        post_script: null
+        pre_script: null
+        pulseaudio_latency: null
+        removed: null
+        virtual_desktop: null
+        vkd3d: null
+    545be96f-e724-492e-843c-bb9070b0c3c3:
+        arguments: null
+        dxvk: null
+        dxvk_nvapi: null
+        executable: NFS13.exe
+        folder: /mnt/quantum/Need for Speed Most Wanted
+        fsr: null
+        gamescope: null
+        icon: com.usebottles.bottles-program
+        id: 545be96f-e724-492e-843c-bb9070b0c3c3
+        name: Need for Speed Most Wanted 2012
+        path: /mnt/quantum/Need for Speed Most Wanted/NFS13.exe
+        post_script: null
+        pre_script: null
+        pulseaudio_latency: null
+        removed: null
+        virtual_desktop: null
+        vkd3d: null
+    97863202-6f1e-4396-b576-56060d55aac0:
+        arguments: null
+        dxvk: null
+        dxvk_nvapi: null
+        executable: GTA5.exe
+        folder: /mnt/helium/Grand Theft Auto V
+        fsr: null
+        gamescope: null
+        icon: com.usebottles.bottles-program
+        id: 97863202-6f1e-4396-b576-56060d55aac0
+        name: Grand Theft Auto 5
+        path: /mnt/helium/Grand Theft Auto V/GTA5.exe
+        post_script: null
+        pre_script: null
+        pulseaudio_latency: null
+        removed: null
+        virtual_desktop: null
+        vkd3d: null
+    d75f1fd2-9866-47f2-8fc9-74f86957939d:
+        arguments: null
+        dxvk: null
+        dxvk_nvapi: null
+        executable: Watch_Dogs.exe
+        folder: /mnt/quantum/Watch Dogs/bin
+        fsr: null
+        gamescope: null
+        icon: com.usebottles.bottles-program
+        id: d75f1fd2-9866-47f2-8fc9-74f86957939d
+        name: Watch Dogs
+        path: /mnt/quantum/Watch Dogs/bin/Watch_Dogs.exe
+        post_script: null
+        pre_script: null
+        pulseaudio_latency: null
+        removed: null
+        virtual_desktop: null
+        vkd3d: null
+    dd78f65d-0ac3-49e5-ba55-8b282ef31a52:
+        arguments: null
+        dxvk: null
+        dxvk_nvapi: null
+        executable: Cities.exe
+        folder: /mnt/quantum/EpicGames/CitiesSkylines
+        fsr: null
+        gamescope: null
+        icon: com.usebottles.bottles-program
+        id: dd78f65d-0ac3-49e5-ba55-8b282ef31a52
+        name: Cities Skylines
+        path: /mnt/quantum/EpicGames/CitiesSkylines/Cities.exe
+        post_script: null
+        pre_script: null
+        pulseaudio_latency: null
+        removed: null
+        virtual_desktop: null
+        vkd3d: null
+    ef08d732-3a20-4b1f-b6d5-dba794143aec:
+        arguments: null
+        dxvk: null
+        dxvk_nvapi: null
+        executable: TombRaider.exe
+        folder: /mnt/quantum/EpicGames/TombRaiderGOTYE
+        fsr: null
+        gamescope: null
+        icon: com.usebottles.bottles-program
+        id: ef08d732-3a20-4b1f-b6d5-dba794143aec
+        name: Tomb Raider - Game of Year
+        path: /mnt/quantum/EpicGames/TombRaiderGOTYE/TombRaider.exe
+        post_script: null
+        pre_script: null
+        pulseaudio_latency: null
+        removed: null
+        virtual_desktop: null
+        vkd3d: null
+Installed_Dependencies:
+- d3dx9
+- msls31
+- arial32
+- times32
+- courie32
+- d3dcompiler_43
+- d3dcompiler_47
+- mono
+- gecko
+- andale32
+- arialb32
+- comic32
+- georgi32
+- impact32
+- tahoma32
+- trebuc32
+- verdan32
+- webdin32
+- allfonts
+- d3dx11
+- d3dcompiler_42
+- d3dcompiler_46
+- consolas
+- dotnet40
+- dotnet452
+- dotnetcoredesktop9
+- dx8vb
+- physx
+- vcredist2022
+- vcredist6sp6
+- vcredist2013
+- webview2
+- riched20
+- vcredist2015
+- msxml6
+- xinput
+- xna40
+- xact_x64
+- xact
+- vcredist2008
+- vcredist2010
+- vcredist2012
+- dotnetcoredesktop3
+- dotnetcoredesktop6
+Language: sys
+LatencyFleX: latencyflex-v0.1.1
+NVAPI: dxvk-nvapi-v0.9.0
+Name: Moon
+Parameters:
+    custom_dpi: 141
+    decorated: true
+    discrete_gpu: true
+    dxvk: true
+    dxvk_nvapi: false
+    fixme_logs: false
+    fsr: true
+    fsr_quality_mode: performance
+    fsr_sharpening_strength: 2
+    fullscreen_capture: false
+    gamemode: true
+    gamescope: false
+    gamescope_borderless: true
+    gamescope_fps: 60.0
+    gamescope_fps_no_focus: 0.0
+    gamescope_fullscreen: false
+    gamescope_game_height: 900.0
+    gamescope_game_width: 1600.0
+    gamescope_scaling: false
+    gamescope_window_height: 900.0
+    gamescope_window_width: 1600.0
+    latencyflex: true
+    mangohud: false
+    mangohud_display_on_game_start: true
+    mouse_warp: false
+    obsvkc: false
+    pulseaudio_latency: false
+    renderer: vulkan
+    sandbox: false
+    sync: fsync
+    take_focus: false
+    use_be_runtime: true
+    use_eac_runtime: true
+    use_runtime: false
+    use_steam_runtime: false
+    versioning_automatic: false
+    versioning_compression: false
+    versioning_exclusion_patterns: false
+    virtual_desktop: false
+    virtual_desktop_res: 1920x1080
+    vkbasalt: false
+    vkd3d: true
+    vmtouch: false
+    vmtouch_cache_cwd: false
+Path: Pluto
+Runner: kron4ek-wine-10.10-staging-tkg-ntsync-amd64-wow64
+RunnerPath: ''
+Sandbox:
+    share_net: false
+    share_sound: false
+State: 0
+Uninstallers: {}
+Update_Date: '2025-06-21 22:39:48.512183'
+VKD3D: vkd3d-proton-2.14.1
+Versioning: false
+Versioning_Exclusion_Patterns: []
+Windows: win10
+WorkingDir: ''
+data: {}
+run_in_terminal: false
+session_arguments: ''
